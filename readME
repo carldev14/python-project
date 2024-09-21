@@ -1,1 +1,10 @@
 First you need to install this dependency if it not installed. 
+
+Run this commands below to install all the dependency.
+
+pip install -r requirements.txt
+
+to run the encode python just do:
+
+python main.py
+
