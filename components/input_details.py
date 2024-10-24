@@ -1,10 +1,10 @@
 from prompt_toolkit import prompt
-from autocomplete_suggestions import Company, Address, Description
-from choice_sheet import ChoiceSheet, parse_date
-from tin_input import TIN
-from float_input import FloatInput
+from .autocomplete_suggestions import Company, Address, Description
+from .choice_sheet import ChoiceSheet, parse_date
+from .tin_input import TIN
+from .float_input import FloatInput
 
-from save_data_excel import Save_to_excel
+from .save_data_excel import Save_to_excel
 
 
 def InputDetails(open_workbook, prepath_of_excel,  input_str, TotalAmountPaid, InputVat):
@@ -41,7 +41,7 @@ def InputDetails(open_workbook, prepath_of_excel,  input_str, TotalAmountPaid, I
         y_or_n = input('\nAre the details correct? (y/n): ')
         if y_or_n.lower() == 'y':
             Save_to_excel(open_workbook, worksheet, prepath_of_excel, formatted_date, fetched_company_name, fetched_address_name, tin_number_input, fetched_description_name, TotalAmountPaid, InputVat, CPS)
-            from Encode_again import Encode_Again
+            from .encode_again import Encode_Again
             Encode_Again(open_workbook, prepath_of_excel)
         elif y_or_n.lower() == 'n':
             InputDetails(prompt('\nEnter the date (052324 = May,24,2024): '), 0, 0)
